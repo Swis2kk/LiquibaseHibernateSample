@@ -22,7 +22,7 @@ public final class Client {
 
     @ElementCollection
     @CollectionTable( name = "PHONE_NUMBER", joinColumns = @JoinColumn(name = "CLIENT_ID"))
-    private List<PhoneNumber> phoneNumbers = new ArrayList<>();
+    private List<Transaction> transactions = new ArrayList<>();
 
     private Client(){} // for JPA
 
@@ -51,7 +51,7 @@ public final class Client {
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", phoneNumbers=" + phoneNumbers +
+                ", transactions=" + transactions +
                 '}';
     }
 }

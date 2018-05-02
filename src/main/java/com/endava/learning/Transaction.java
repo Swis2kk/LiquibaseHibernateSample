@@ -6,17 +6,14 @@ import javax.persistence.Id;
 import java.util.Objects;
 
 @Embeddable
-public final class PhoneNumber {
-
-    @Id
-    private Long id;
+public final class Transaction {
 
     @Column(name = "NUMBER")
     private Long number;
 
-    private PhoneNumber() {} //for JPA
+    private Transaction() {} //for JPA
 
-    public PhoneNumber(Long number) {
+    public Transaction(Long number) {
         this.number = number;
     }
 
@@ -24,7 +21,7 @@ public final class PhoneNumber {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        PhoneNumber that = (PhoneNumber) o;
+        Transaction that = (Transaction) o;
         return Objects.equals(number, that.number);
     }
 
@@ -36,8 +33,7 @@ public final class PhoneNumber {
 
     @Override
     public String toString() {
-        return "PhoneNumber{" +
-                "id=" + id +
+        return "Transaction{" +
                 ", number=" + number +
                 '}';
     }
