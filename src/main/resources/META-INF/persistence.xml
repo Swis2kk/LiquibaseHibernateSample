@@ -6,6 +6,7 @@
     <persistence-unit name="persistence" transaction-type="RESOURCE_LOCAL">
 
         <class>com.endava.learning.Client</class>
+        <class>com.endava.learning.Account</class>
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
@@ -16,6 +17,7 @@
             <property name="hibernate.format_sql" value="true"/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>
             <property name="hibernate.show_sql" value="true"/>
+            <!--<property name="hibernate.hbm2ddl.auto" value="create-drop"/>-->
         </properties>
 
     </persistence-unit>

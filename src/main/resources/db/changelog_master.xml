@@ -8,5 +8,6 @@
 
     <include file="src/main/resources/db/changelog_001.xml"/>
     <include file="src/main/resources/db/changelog_002.xml"/>
+    <include file="src/main/resources/db/changelog_003.xml"/>
 
 </databaseChangeLog>

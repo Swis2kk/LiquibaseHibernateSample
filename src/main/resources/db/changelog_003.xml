@@ -6,12 +6,16 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.7
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.7.xsd">
 
-    <changeSet id="2" author="Dmitrii">
-        <comment>Creating a "transaction" table</comment>
+    <changeSet id="3" author="Dmitrii">
+        <comment>Creating a "account" table</comment>
+
         <sql>
-            CREATE TABLE transaction(
-            CLIENT_ID BIGINT,
-            NUMBER BIGINT
+            CREATE TABLE account(
+            ID BIGINT PRIMARY KEY AUTO_INCREMENT,
+            LOGIN VARCHAR(50) NOT NULL,
+            PASSWORD VARCHAR(50) NOT NULL,
+            CREATED VARCHAR(50),
+            CLIENT_ID BIGINT not null
             );
         </sql>
 

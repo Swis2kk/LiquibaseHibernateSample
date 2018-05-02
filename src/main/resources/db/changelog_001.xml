@@ -9,7 +9,7 @@
     <changeSet id="1" author="Dmitrii">
         <sql>
             CREATE TABLE client(
-            ID BIGINT PRIMARY KEY,
+            ID BIGINT PRIMARY KEY AUTO_INCREMENT,
             FIRST_NAME varchar(50) NOT NULL,
             LAST_NAME varchar(50) NOT NULL
             )

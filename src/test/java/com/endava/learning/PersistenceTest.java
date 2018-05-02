@@ -41,12 +41,35 @@ public class PersistenceTest {
         entityManager.getTransaction().begin();
     }
 
+    @Ignore
     @Test
     public void tryToAddNewClientToDB() throws Exception {
-        Client client = new Client(2L, "Dmitrii", "Nedealcov");
+        Client client = new Client("Dmitrii", "Nedealcov");
 
         entityManager.persist(client);
         entityManager.flush();
+
+        entityManager.getTransaction().rollback();
+    }
+
+    @Ignore
+    @Test
+    public void tryToAddNewAccountToDB() throws Exception {
+        Client client = new Client("Dmitrii", "Nedealcov");
+        Account account = new Account("hello", "world", "today", client);
+
+
+
+        entityManager.persist(client);
+        entityManager.persist(account);
+        entityManager.getTransaction().commit();
+    }
+
+    @Ignore
+    @Test
+    public void persistANewClient() throws Exception {
+
+
     }
 
 
@@ -54,7 +77,7 @@ public class PersistenceTest {
 
     @After
     public void cleanUp() throws Exception {
-        entityManager.getTransaction().rollback();
+//        entityManager.getTransaction().rollback();
         entityManager.close();
     }
 

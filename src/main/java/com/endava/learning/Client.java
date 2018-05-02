@@ -11,6 +11,7 @@ import java.util.Objects;
 public final class Client {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
     private Long id;
 
@@ -21,13 +22,12 @@ public final class Client {
     private String lastName;
 
     @ElementCollection
-    @CollectionTable( name = "PHONE_NUMBER", joinColumns = @JoinColumn(name = "CLIENT_ID"))
+    @CollectionTable(name = "TRANSACTION", joinColumns = @JoinColumn(name = "CLIENT_ID"))
     private List<Transaction> transactions = new ArrayList<>();
 
     private Client(){} // for JPA
 
-    public Client(Long id, String firstName, String lastName) {
-        this.id = id;
+    public Client(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
     }
@@ -53,5 +53,9 @@ public final class Client {
                 ", lastName='" + lastName + '\'' +
                 ", transactions=" + transactions +
                 '}';
+    }
+
+    public void addTransaction(Transaction transaction) {
+        transactions.add(transaction);
     }
 }
