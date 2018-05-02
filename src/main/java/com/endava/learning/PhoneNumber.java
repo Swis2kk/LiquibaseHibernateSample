@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import java.util.Objects;
 
 @Embeddable
-public class PhoneNumber {
+public final class PhoneNumber {
 
     @Id
     private Long id;
