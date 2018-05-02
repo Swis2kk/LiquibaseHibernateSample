@@ -1,0 +1,18 @@
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
+
+# Eclipse project files
+.project
+.settings
+.classpath
+target
+bin
+
+# Compiled class file
+*.class
+
+# Log file
+*.log
